@@ -1,0 +1,37 @@
+@model Notes
+
+@{
+    ViewBag.Title = $"{this.Model.id}Note by {this.Model.user}";
+    Layout = "_Layout";
+}
+
+<h3>@this.Model.id Note by @this.Model.user</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Note ID
+        </div>
+        <div class="col">
+            Date
+        </div>
+        <div class="col">
+            Text
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @this.Model.id
+        </div>
+        <div class="col">
+            @this.Model.dateTime
+        </div>
+        <div class="col">
+            @this.Model.text
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Back to list", "Index")
+        </div>
+    </div>
+</div>

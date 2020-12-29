@@ -1,0 +1,30 @@
+@model IEnumerable<Notes>
+
+@{
+    ViewBag.Title = "All Notes";
+    Layout = "_Layout";
+}
+
+<h2>All Notes</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      User
+    </div>
+    <div class="col">
+      Text
+    </div>
+  </div>
+  @foreach (var note in this.Model)
+  {
+    <div class="row">
+      <div class="col">
+        @note.user
+      </div>
+      <div class="col">
+        @Html.ActionLink(note.dateTime, "Details", note)
+      </div>
+    </div>
+  }
+</div>
